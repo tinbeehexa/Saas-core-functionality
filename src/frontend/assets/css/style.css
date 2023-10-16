@@ -1,0 +1,68 @@
+#root {
+    height: 100vh;
+}
+
+.container-variux {
+    margin: 0 auto;
+}
+
+.logo-brand {
+    width: 200px;
+    height: 100px;
+    margin-right: 32px;
+}
+
+.text-menu-header {
+    color: #4cc9e9 !important;
+    font-size: 21px !important;
+    font-family: 'Roboto';
+}
+
+.header {
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.45), rgba(85, 85, 85, 0.45));
+}
+
+.header-navbar-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+}
+
+.header-logo {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.header-navbar-option {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header-navbar-option-title {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 32px;
+    height: 100%;
+    line-height: var(--header-height);
+    text-decoration: none;
+}
+
+.header-navbar-right {
+    display: flex;
+    align-items: center;
+    padding-right: 32px;
+}
+
+.btn-header {
+    width: 170px;
+    height: 65px;
+    background-color: #fdfafa !important;
+    font-family: 'Roboto' !important;
+    font-size: 21px !important;
+    border-radius: 21px !important;
+}

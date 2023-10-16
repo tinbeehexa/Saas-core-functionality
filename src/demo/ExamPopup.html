@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamPopup</title>
+    <link rel="stylesheet" href="./ExamPopup.css">
+    <link rel="stylesheet" href="../core/core.css">
+</head>
+
+<body class="my-popup">
+    <div id="root">
+        <div></div>
+        <div class="test">
+            <div class="form-popup popup" id="myForm">
+                <form action="/action_page.php" class="form-container">
+                    <h1>Login</h1>
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <button type="submit" class="btn">Login</button>
+                    <button type="button" class="btn cancel">Close</button>
+                </form>
+            </div>
+        </div>
+        <div class="form-popup-2 popup">
+            Test form 2
+        </div>
+    </div>
+    <script type="module" src="../core/core.js"></script>
+    <script type="module">
+        import Popup from '../core/core.js';
+        const config = {
+            selector: '.popup',
+            design: {
+                // setPosition: {
+                //     Test: 'position'
+                // }
+                setOverlay 
+            },
+            condition: {
+                // existClass: {
+                //     enable: true,
+                //     className: 'my-popup'
+                // },
+                // existCookie: {
+                //     enable: true,
+                //     cname: 'popup'
+                // }
+            },
+            trigger: {
+                scrollPage: {
+                    enable: true,
+                    height: 1000
+                },
+                // showAfter: {
+                //     enable: true,
+                //     seconds: 3000,
+                // },
+                // closeAfter: {
+                //     enable: true,
+                //     seconds: 2000
+                // }
+            }
+        }
+        const popup = new Popup(config);
+    </script>
+</body>
+
+</html>

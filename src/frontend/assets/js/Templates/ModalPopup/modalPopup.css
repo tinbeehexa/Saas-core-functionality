@@ -1,0 +1,100 @@
+/* Reset CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variable */
+
+:root {
+    --bgr-backFriday: rgb(195, 255, 0);
+}
+
+/* CSS Popup Friday */
+
+.root {
+    background-color: #1111112d;
+    height: 1000px;
+}
+
+.popup-backFriday {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: #fafafa;
+}
+
+.popup-title {
+    height: 150px;
+    width: 100%;
+    background-color: var(--bgr-backFriday);
+    border-radius: 20px;
+}
+
+.text-align-center {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.popup-title {
+    font-size: 3rem;
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 700;
+    height: 300px;
+}
+
+.pragraph {
+    font-size: 18px;
+    color: #111111;
+    font-family: sans-serif;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.pragraph .sales {
+    font-size: 72px;
+    color: #111111;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-left: 15px;
+}
+
+.subText {
+    height: 25px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    color: #999999;
+    font-family: 'Times New Roman';
+}
+
+.btn-click {
+    height: 60px;
+    width: 205px;
+    background-color: #fdd600;
+    border: 0;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #111111;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.height-button {
+    height: 180px;
+    /* align-items: flex-end; */
+    padding-bottom: 40px;
+}
