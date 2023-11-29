@@ -1,34 +1,31 @@
 "use strict";
 
-import imports from './imports.js';
-
-class Popup {
+class core {
     constructor(userconfig) {
         this.config = userconfig;
-        this.init();
+        this.Conditions = [];
     }
 
-    init = () => {
-        const methods = ['trigger', 'design'];
-        let status = false;
-        const cons = Object.getOwnPropertyNames(this.config.condition ? this.config.condition : '');
-        for (const con of cons) {
-            if (this.config.condition[con] !== undefined)
-                if (imports[con](this.config) === true) 
-                    status = true;
-            else status = false;
-        }
+    readConfig (config, methods, register, keyPopup) {
         methods.forEach((method) => {
-            if (status === true) {
-                if (this.config[method] !== undefined) {
-                    const keys = Object.getOwnPropertyNames(this.config[method] ? this.config[method] : '');
-                    for (const key of keys) {
-                        imports[key](this.config)
-                    };
-                }
+            console.log(method);
+            if (config[method] !== undefined) {
+                const active = register[method](config[method], keyPopup);
+                if (active == true)
+                    this.Conditions.pop();
             }
+        });
+        if (this.Conditions.length == 0)
+            return true;
+        else return false;
+    }
+
+    activeConditions (config, methods) {
+        methods.forEach((method) => {
+            if (config[method].enable == true) 
+                this.Conditions.push(method);
         });
     }
 };
 
-export default Popup;
+export default core;

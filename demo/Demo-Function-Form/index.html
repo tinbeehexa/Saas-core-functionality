@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Function Form</title>
+</head>
+
+<body style="height: 2000px;">
+    <!-- <p>Chức năng click BTN 1</p> -->
+    <button class="activePopup btnpopupTest1">Click Pop 1</button>
+    <!-- <p>Chức năng click BTN 2</p> -->
+    <button class="activePopup btnpopupTest2">Click Pop 2</button>
+</body>
+<script type="module">
+    import {readConfig} from '../../src/core/app.js';
+
+    var body = document.body;
+
+    body.classList.add("cms-index-index");
+    body.classList.add("saas-popup");
+
+    const Test = [{
+        "namePopup": "cms-index-index",
+        "enable": true,
+        "functionName": "popupTest2",
+        "html": "<div class=\"popup\">\r\n                    <div class=\"img-wrapper\"><img src=\"https:\/\/png.pngtree.com\/thumb_back\/fw800\/background\/20221116\/pngtree-isolated-white-background-with-a-vertical-red-gift-bow-photo-image_677817.jpg\" alt=\"Anh\"><\/div>\r\n                    <div class=\"content\">\r\n                        <p class=\"popup-heading\">Save up to<\/p>\r\n                        <h1 class=\"popup-offer\">30% OFF<\/h1>\r\n                        <p class=\"popup-desc\">In your next holiday offer<\/p>\r\n                    \r\n                        <form action=\"POST\" class=\"popup-form\">\r\n                            <input class=\"email\" type=\"email\" placeholder=\"Please enter your email\">\r\n                            <input class=\"submit\" type=\"button\" value=\"Get it now\">\r\n                        <\/form>\r\n                    \r\n                        <button class=\"refuse btnClosePopup\">No, thanks<\/button>\r\n                    <\/div>\r\n                <\/div>",
+        "css": "      .my-popup {\r\n            position: absolute;\r\n            z-index: 1010 !important;\r\n        }\r\n        \r\n        .active {\r\n            display: block !important;\r\n        }\r\n        \r\n        .closePopup {\r\n            display: none;\r\n        }\r\n        \r\n        .overlay {\r\n            position: fixed;\r\n            top: 0;\r\n            left: 0;\r\n            right: 0;\r\n            bottom: 0;\r\n            background-color: rgba(0, 0, 0, 0.4);\r\n            z-index: 1000;\r\n        }\r\n        \r\n        .popup {\r\n            width: 100%;\r\n            height: 100%;\r\n            display: flex;\r\n            border-radius: 16px;\r\n            overflow: hidden;\r\n            box-shadow: 2px 3px 3px 2px #ccc;\r\n        }\r\n        \r\n        .img-wrapper {\r\n            height: 100%;\r\n            width: 45%;\r\n        }\r\n        \r\n        .popup img {\r\n            width: 100%;\r\n            height: 100%;\r\n            object-fit: cover;\r\n        }\r\n        \r\n        .content {\r\n            flex-grow: 1;\r\n            text-align: center;\r\n            background-color: #fff;\r\n        }\r\n        \r\n        .content .popup-heading {\r\n            font-size: 160%;\r\n            line-height: 100%;\r\n            height: 10%;\r\n            font-weight: 700;\r\n            color: #bbb;\r\n            margin-top: 10%;\r\n            margin-bottom: 0;\r\n        }\r\n        \r\n        .content .popup-offer {\r\n            font-size: 180%;\r\n            margin-top: 4%;\r\n            margin-bottom: 0;\r\n        }\r\n        \r\n        .content .popup-desc {\r\n            font-size: 130%;\r\n            color: #bbb;\r\n            margin-top: 4%;\r\n        }\r\n        \r\n        .content .popup-form {\r\n            margin-top: 20%;\r\n            display: flex;\r\n            flex-direction: column;\r\n            align-items: center;\r\n        }\r\n        \r\n        .content .popup-form .email {\r\n            width: 70%;\r\n            padding: 4% 8%;\r\n            border-radius: 20px;\r\n            border: 1px solid #ccc;\r\n            background-color: #ddd;\r\n            outline: none;\r\n            margin-bottom: 10%;\r\n        }\r\n        \r\n        .content .popup-form .submit {\r\n            width: 70%;\r\n            padding: 2% 8%;\r\n            border-radius: 20px;\r\n            border: none;\r\n            background-color: red;\r\n            color: #fff;\r\n            font-size: 150%;\r\n            font-weight: bold;\r\n            outline: none;\r\n            margin-bottom: 10%;\r\n        }\r\n        \r\n        .content .popup-form .submit:hover {\r\n            cursor: pointer;\r\n            opacity: 0.8;\r\n        }\r\n        \r\n        .content .refuse {\r\n            border: none;\r\n            background-color: transparent;\r\n            text-decoration: underline;\r\n            cursor: pointer;\r\n            padding: 1.5%;\r\n        }\r\n        \r\n        \/* Responsive *\/\r\n        @media screen and (max-width: 768px) {\r\n            .popup {\r\n                width: 100%;\r\n                height: 100%;\r\n                display: flex;\r\n                border-radius: 16px;\r\n                overflow: hidden;\r\n                box-shadow: 2px 3px 3px 2px #ccc;\r\n            }\r\n        \r\n            .content .popup-heading {\r\n                font-size: 150%;\r\nline-height: 100%;\r\n                height: 10%;\r\n                font-weight: 700;\r\n                color: #bbb;\r\n                margin-top: 10%;\r\n                margin-bottom: 0;\r\n            }\r\n            \r\n            .content .popup-offer {\r\n                font-size: 150%;\r\n                margin-top: 4%;\r\n                margin-bottom: 0;\r\n            }\r\n            \r\n            .content .popup-desc {\r\n                font-size: 130%;\r\n                color: #bbb;\r\n                margin-top: 4%;\r\n            }\r\n            \r\n            .content .popup-form {\r\n                margin-top: 16%;\r\n                display: flex;\r\n                flex-direction: column;\r\n                align-items: center;\r\n            }\r\n        \r\n            .content .popup-form .email {\r\n                width: 60%;\r\n                padding: 3% 8%;\r\n                border-radius: 20px;\r\n                border: 1px solid #ccc;\r\n                background-color: #ddd;\r\n                outline: none;\r\n                margin-bottom: 10%;\r\n            }\r\n            \r\n            .content .popup-form .submit {\r\n                width: 60%;\r\n                padding: 2% 8%;\r\n                border-radius: 20px;\r\n                border: none;\r\n                background-color: red;\r\n                color: #fff;\r\n                font-size: 150%;\r\n                font-weight: bold;\r\n                outline: none;\r\n                margin-bottom: 10%;\r\n            }\r\n        }\r\n        \r\n        @media screen and (max-width: 640px) {\r\n            .popup {\r\n                width: 100%;\r\n                height: 100%;\r\n                display: flex;\r\n                border-radius: 16px;\r\n                overflow: hidden;\r\n                box-shadow: 2px 3px 3px 2px #ccc;\r\n            }\r\n        \r\n            .content .popup-heading {\r\n                font-size: 130%;\r\n                line-height: 100%;\r\n                height: 10%;\r\n                font-weight: 700;\r\n                color: #bbb;\r\n                margin-top: 10%;\r\n                margin-bottom: 0;\r\n            }\r\n            \r\n            .content .popup-offer {\r\n                font-size: 150%;\r\n                margin-top: 4%;\r\n                margin-bottom: 0;\r\n            }\r\n            \r\n            .content .popup-desc {\r\n                font-size: 120%;\r\n                color: #bbb;\r\n                margin-top: 4%;\r\n            }\r\n            \r\n            .content .popup-form {\r\n                margin-top: 16%;\r\n                display: flex;\r\n                flex-direction: column;\r\n                align-items: center;\r\n            }\r\n        \r\n            .content .popup-form .email {\r\n                width: 60%;\r\n                padding: 3% 8%;\r\n                border-radius: 20px;\r\n                border: 1px solid #ccc;\r\n                background-color: #ddd;\r\n                outline: none;\r\n                margin-bottom: 10%;\r\n            }\r\n            \r\n            .content .popup-form .submit {\r\n                width: 60%;\r\n                padding: 2% 8%;\r\n                border-radius: 20px;\r\n                border: none;\r\n                background-color: red;\r\n                color: #fff;\r\n                font-size: 120%;\r\n                font-weight: bold;\r\n                outline: none;\r\n                margin-bottom: 10%;\r\n            }\r\n        }\r\n        \r\n        @media screen and (max-width: 480px) {\r\n            .popup {\r\n                width: 100%;\r\n                height: 100%;\r\n                display: flex;\r\n                border-radius: 16px;\r\n                overflow: hidden;\r\n                box-shadow: 2px 3px 3px 2px #ccc;\r\n            }\r\n        \r\n            .content .popup-heading {\r\n                font-size: 100%;\r\n                line-height: 100%;\r\n                height: 10%;\r\n                font-weight: 700;\r\n                color: #bbb;\r\n                margin-top: 8%;\r\n                margin-bottom: 0;\r\n            }\r\n            \r\n            .content .popup-offer {\r\n                font-size: 120%;\r\n                margin-top: 4%;\r\n                margin-bottom: 0;\r\n            }\r\n            \r\n            .content .popup-desc {\r\n                font-size: 90%;\r\ncolor: #bbb;\r\n                margin-top: 4%;\r\n            }\r\n            \r\n            .content .popup-form {\r\n                margin-top: 16%;\r\n                display: flex;\r\n                flex-direction: column;\r\n                align-items: center;\r\n            }\r\n        \r\n            .content .popup-form .email {\r\n                width: 70%;\r\n                font-size: 60%;\r\n                padding: 3% 8%;\r\n                border-radius: 20px;\r\n                border: 1px solid #ccc;\r\n                background-color: #ddd;\r\n                outline: none;\r\n                margin-bottom: 6%;\r\n            }\r\n            \r\n            .content .popup-form .submit {\r\n                width: 70%;\r\n                padding: 2% 4%;\r\n                border-radius: 20px;\r\n                border: none;\r\n                background-color: red;\r\n                color: #fff;\r\n                font-size: 80%;\r\n                font-weight: bold;\r\n                outline: none;\r\n                margin-bottom: 8%;\r\n            }\r\n        }\r\n        \r\n        @media screen and (max-width: 360px) {\r\n            .popup {\r\n                width: 100%;\r\n                height: 100%;\r\n                display: flex;\r\n                border-radius: 16px;\r\n                overflow: hidden;\r\n                box-shadow: 2px 3px 3px 2px #ccc;\r\n            }\r\n        \r\n            .content .popup-heading {\r\n                font-size: 90%;\r\n                line-height: 90%;\r\n                height: 10%;\r\n                font-weight: 700;\r\n                color: #bbb;\r\n                margin-top: 8%;\r\n                margin-bottom: 0;\r\n            }\r\n            \r\n            .content .popup-offer {\r\n                font-size: 100%;\r\n                margin-top: 4%;\r\n                margin-bottom: 0;\r\n            }\r\n            \r\n            .content .popup-desc {\r\n                font-size: 70%;\r\n                color: #bbb;\r\n                margin-top: 4%;\r\n            }\r\n            \r\n            .content .popup-form {\r\n                margin-top: 12%;\r\n                display: flex;\r\n                flex-direction: column;\r\n                align-items: center;\r\n            }\r\n        \r\n            .content .popup-form .email {\r\n                width: 70%;\r\n                font-size: 50%;\r\n                padding: 2% 6%;\r\n                border-radius: 20px;\r\n                border: 1px solid #ccc;\r\n                background-color: #ddd;\r\n                outline: none;\r\n                margin-bottom: 6%;\r\n            }\r\n            \r\n            .content .popup-form .submit {\r\n                width: 70%;\r\n                padding: 2% 6%;\r\n                border-radius: 20px;\r\n                border: none;\r\n                background-color: red;\r\n                color: #fff;\r\n                font-size: 70%;\r\n                font-weight: bold;\r\n                outline: none;\r\n                margin-bottom: 6%;\r\n            }\r\n        \r\n            .content .refuse {\r\n                font-size: 60%;\r\n                border: none;\r\n                background-color: transparent;\r\n                text-decoration: underline;\r\n                cursor: pointer;\r\n                padding: 1.5%;\r\n            }",
+        "condition": {
+            "existClass": {
+                "enable": true
+            },
+            "existCookie": {
+                "enable": false
+            }
+        },
+        "behaviors": {
+            "open": {
+                "scrollToXPercent": {
+                    "enable": false,
+                    "percent": 50
+                },
+                "visitWebAfterXSeconds": {
+                    "enable": true,
+                    "seconds": 3000
+                },
+                "onClickItem": {
+                    "enable": false
+                },
+                "afterViewXPage": {
+                    "enable": false,
+                    "numPage": 0
+                }
+            },
+            "close": {
+                "closeAfterXSeconds": {
+                    "enable": true,
+                    "seconds": 5000
+                },
+                "closeClickButton": {
+                    "enable": true
+                },
+                "closeClickOutside": {
+                    "enable": true
+                }
+            }
+        },
+        "design": {
+            "positionPopup": {
+                "width": 500,
+                "height": 500,
+                "x": 50,
+                "y": 50
+            },
+            "overlayPopup": {
+                "enable": true
+            }
+        },
+        "animations": {
+            "appear": {
+                "enableAnimation": true,
+                "moveFromTop": {
+                    "enable": true,
+                    "duration": 200,
+                    "easing": "ease-in",
+                    "movingLength": 100
+                },
+                "horizontalMove": {
+                    "enable": false,
+                    "duration": 0,
+                    "easing": "ease",
+                    "movingFrom": "left",
+                    "movingLength": 0
+                },
+                "zoomIn": {
+                    "enable": false,
+                    "duration": 0,
+                    "easing": "ease",
+                    "fromPercent": 0
+                },
+                "fadeIn": {
+                    "enable": false,
+                    "duration": 0,
+                    "easing": "ease"
+                }
+            },
+            "disappear": {
+                "enableAnimation": true,
+                "zoomOut": {
+                    "enable": true,
+                    "duration": 200,
+                    "easing": "ease-out"
+                },
+                "fadeOut": {
+                    "enable": false,
+                    "duration": 0,
+                    "easing": "ease"
+                }
+            }
+        }
+    }];
+    
+
+    window.thisIsMyConfig = Test;
+    readConfig(Test);
+
+    
+</script>
+</body>
+
+</html>
