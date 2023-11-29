@@ -13,7 +13,7 @@ const closeAfterXSeconds = (config, keyPopup) => {
                 if (mutation.type === "attributes" && mutation.attributeName === "class") {
                     if (elementClosePopup.classList.contains("active")) {
                             timeoutId = setTimeout(() => {
-                                popupHandler.remove();
+                                popupHandler.destroy();
                             }, config.seconds);
                     } else {
                         clearTimeout(timeoutId);

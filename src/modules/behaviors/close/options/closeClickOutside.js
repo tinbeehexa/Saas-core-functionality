@@ -35,7 +35,7 @@ const closeClickOutside = (config, keyPopup) => {
                         return;
                     } else if(findCloseClickOutsideParent(e) == null) {
                         let popupHandler = new PopupHandler(element);
-                        popupHandler.remove();
+                        popupHandler.destroy();
                         return;
                     }
                     return;

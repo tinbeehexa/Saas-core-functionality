@@ -3,7 +3,7 @@
 import PopupHandler from "../../../../core/PopupHandler.js";
 
 const scrollToXPercent = (config, keyPopup) => {
-    if (!config.enable) return false;
+    if (!config.enable) return;
 
     window.addEventListener("scroll", activeScollPage);
 

@@ -1,18 +1,11 @@
 'use strict';
 
 import Popup from "./Popup.js";
-
-const existPopupBody = (config) => {
-    if (config.enable === true) {
-        const checkClass = document.body.classList.contains(config.namePopup);
-        return checkClass;
-    }
-    return false;
-}
+import existClass from "../modules/conditions/options/existClass.js";
 
 export function readConfig(listConfig) {
     listConfig.forEach((element) => {
-        if (existPopupBody(element)) {
+        if (existClass(element)) {
             if (element.enable == true) {
                 const el = document.createElement('div');
                 el.classList.add('my-popup', element.functionName);
@@ -25,4 +18,4 @@ export function readConfig(listConfig) {
     });
 };
 
-// readConfig(window.thisIsMyConfig);
+readConfig(window.thisIsMyConfig);

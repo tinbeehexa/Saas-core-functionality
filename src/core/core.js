@@ -8,7 +8,6 @@ class core {
 
     readConfig (config, methods, register, keyPopup) {
         methods.forEach((method) => {
-            console.log(method);
             if (config[method] !== undefined) {
                 const active = register[method](config[method], keyPopup);
                 if (active == true)

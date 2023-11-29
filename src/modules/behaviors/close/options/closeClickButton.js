@@ -9,7 +9,7 @@ const closeClickButton = (config, keyPopup) => {
         elementBTNClosePopup.onclick = () => {
             const elementPopup = eKeyPopup.querySelector('.closeClickButton');
             const popupHandler = new PopupHandler(elementPopup);
-            popupHandler.remove();
+            popupHandler.destroy();
         }
     }
 }

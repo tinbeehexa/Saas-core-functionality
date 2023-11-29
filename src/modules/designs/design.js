@@ -6,8 +6,8 @@ import core from "../../core/core.js";
 //options, keyPopup
 class designPopup {
     constructor(obj) {
-        this.options = obj.config.design.options; 
-        this.keyPopup = obj.keyPopup.keyPopup;
+        this.options = obj.config.design; 
+        this.keyPopup = obj.keyPopup;
         this.init();
     }
 

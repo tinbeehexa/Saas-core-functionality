@@ -60,7 +60,7 @@ class Popup {
 
         const Conditions = new condition(this.config.condition);
 
-        if(Conditions.getStatus() === false) return;
+        if(!Conditions.getStatus()) return;
 
         if (this.config.enable) {
             new animations(this); //this.config.animations, this.keyPopup

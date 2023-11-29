@@ -8,6 +8,7 @@ module.exports = {
             './src/core/core.js',
             './src/core/Popup.js',
             './src/core/render.js',
+            './src/core/PopupHandler.js',
             './src/modules/animations/appear/options/fadeIn.js',
             './src/modules/animations/appear/options/horizontalMove.js',
             './src/modules/animations/appear/options/moveFromTop.js',
