@@ -13,7 +13,7 @@ const afterViewXPage = (config, keyPopup) => {
             const elementViewXPage = keyPopup.querySelector('.afterViewXPage');
             const popupHandler = new PopupHandler(elementViewXPage);
 
-            if (elementViewXPage && !elementViewXPage.classList.contains('active')) {
+            if (elementViewXPage && !elementViewXPage.classList.contains('variux-popup-active')) {
                 popupHandler.active();
             }
         } 

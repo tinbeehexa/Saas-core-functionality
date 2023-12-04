@@ -10,7 +10,7 @@ const horizontalMove = (config, keyPopup) => {
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "attributes" && mutation.attributeName === "class") {
-                    if (popupElement.classList.contains("active")) {
+                    if (popupElement.classList.contains("variux-popup-active")) {
                         const popupSliding = [
                             { transform: `translateX(${movingLength}px)`, opacity: 0 },
                             { transform: "translateX(0px)", opacity: 1 },

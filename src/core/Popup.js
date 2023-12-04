@@ -40,7 +40,7 @@ class Popup {
     }
 
     
-    functionPopupEnabled = () => {
+    functionPopupEnabled() {
         const trueKeys = this.findKeysWithEnableTrue(this.config);
         var temp = ['positionPopup'];
         trueKeys.forEach((key) => {
@@ -55,7 +55,7 @@ class Popup {
 
 
     show() {
-        const render = new RenderPopup("my-popup", this.html, this.styleCss, this.keyPopup, this.functionPopupEnabled());
+        const render = new RenderPopup("variux-popup", this.html, this.styleCss, this.keyPopup, this.functionPopupEnabled());
         render.innerPopup();
 
         const Conditions = new condition(this.config.condition);
@@ -66,7 +66,7 @@ class Popup {
             new animations(this); //this.config.animations, this.keyPopup
             new behaviors(this); //this.config.behaviors, this.keyPopup
             new designPopup(this);//this.config.design, this.keyPopup
-        } 
+        }
     }
 };
 

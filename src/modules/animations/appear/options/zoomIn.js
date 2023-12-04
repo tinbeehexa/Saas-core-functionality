@@ -8,7 +8,7 @@ const zoomIn = (config, keyPopup) => {
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "attributes" && mutation.attributeName === "class") {
-                    if (popupElement.classList.contains("active")) {
+                    if (popupElement.classList.contains("variux-popup-active")) {
                         const popupZoomIn = [
                             { transform: `scale(${config.fromPercent/100})`, opacity: 0 },
                             { transform: "scale(1)", opacity: 1 },

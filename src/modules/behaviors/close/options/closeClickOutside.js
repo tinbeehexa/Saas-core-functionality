@@ -27,7 +27,7 @@ const closeClickOutside = (config, keyPopup) => {
         let element = document.querySelector(`.${keyPopup}`);
         element = element.children[0];
         document.addEventListener("click", (e) => {
-            if (!element.classList.contains("active")) { // Nếu không chứa
+            if (!element.classList.contains("variux-popup-active")) { // Nếu không chứa
                 return;
             } else {
                 if(e.target != document.querySelector(".btn" + keyPopup)) { // Nếu không click vô nút mở nó

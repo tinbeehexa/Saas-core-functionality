@@ -10,7 +10,7 @@ const moveToTop = (config, keyPopup) => {
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "attributes" && mutation.attributeName === "class") {
-                    if (!popupElement.classList.contains("active")) {
+                    if (!popupElement.classList.contains("variux-popup-active")) {
                         popupElement.style.setProperty("display", "block", "important");
                         function Animation() {
                             return new Promise((resolve) => {

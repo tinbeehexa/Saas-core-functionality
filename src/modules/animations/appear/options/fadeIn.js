@@ -8,7 +8,7 @@ const fadeIn = (config, keyPopup) => {
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === "attributes" && mutation.attributeName === "class") {
-                    if (popupElement.classList.contains("active")) {
+                    if (popupElement.classList.contains("variux-popup-active")) {
                         const popupZoomIn = [
                             { opacity: 0 },
                             { opacity: 1 }

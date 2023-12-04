@@ -11,7 +11,7 @@ const closeAfterXSeconds = (config, keyPopup) => {
         const observer = new MutationObserver(mutations => {
             mutations.forEach(mutation => {
                 if (mutation.type === "attributes" && mutation.attributeName === "class") {
-                    if (elementClosePopup.classList.contains("active")) {
+                    if (elementClosePopup.classList.contains("variux-popup-active")) {
                             timeoutId = setTimeout(() => {
                                 popupHandler.destroy();
                             }, config.seconds);

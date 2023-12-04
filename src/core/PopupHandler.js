@@ -6,11 +6,11 @@ class PopupHandler {
     }
 
     active() {
-        this.element.classList.add("active");
+        this.element.classList.add("variux-popup-active");
     }
 
     destroy() {
-        this.element.classList.remove("active")
+        this.element.classList.remove("variux-popup-active");
     }
 }
 

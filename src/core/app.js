@@ -8,7 +8,7 @@ export function readConfig(listConfig) {
         if (existClass(element)) {
             if (element.enable == true) {
                 const el = document.createElement('div');
-                el.classList.add('my-popup', element.functionName);
+                el.classList.add('variux-popup', element.functionName);
                 document.body.appendChild(el);
     
                 let newPopup = new Popup(element, element.functionName, element.html, element.css);
