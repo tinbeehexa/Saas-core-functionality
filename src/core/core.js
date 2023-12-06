@@ -4,7 +4,7 @@ class core {
     constructor(userconfig) {
         this.config = userconfig;
         this.Conditions = [];
-    }
+    } 
 
     readConfig (config, methods, register, keyPopup) {
         methods.forEach((method) => {

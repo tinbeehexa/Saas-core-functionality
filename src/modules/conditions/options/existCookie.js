@@ -2,6 +2,7 @@
 
 const existCookie = (config) => {
     if (config.enable) {
+        
         const getCookie = (cname) => {
             let name = cname + "=";
             let decodedCookie = decodeURIComponent(document.cookie);
@@ -17,12 +18,14 @@ const existCookie = (config) => {
             }
             return "";
         }
+
         const checkCookie = () => {
             let cookieName = config.cookieName;
             let value = getCookie(cookieName);
             if (value != 1) return false;
             return true;
         }
+
         return checkCookie();
     }
     return false;

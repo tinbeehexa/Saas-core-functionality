@@ -55,17 +55,16 @@ class Popup {
 
 
     show() {
-        const render = new RenderPopup("variux-popup", this.html, this.styleCss, this.keyPopup, this.functionPopupEnabled());
+        const render = new RenderPopup(this.html, this.styleCss, this.keyPopup, this.functionPopupEnabled());
         render.innerPopup();
 
         const Conditions = new condition(this.config.condition);
-
         if(!Conditions.getStatus()) return;
 
         if (this.config.enable) {
             new animations(this); //this.config.animations, this.keyPopup
             new behaviors(this); //this.config.behaviors, this.keyPopup
-            new designPopup(this);//this.config.design, this.keyPopup
+            new designPopup(this); //this.config.design, this.keyPopup
         }
     }
 };

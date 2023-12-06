@@ -4,19 +4,18 @@ import PopupHandler from "../../../../core/PopupHandler.js";
 
 const afterViewXPage = (config, keyPopup) => {
     if (config.enable) {
-        let pageViews = localStorage.getItem(`${keyPopup}`) || 0;
+        let pageViews = sessionStorage.getItem(`${keyPopup}`) || 0;
         pageViews++;
 
-        localStorage.setItem(`${keyPopup}`, pageViews);
+        sessionStorage.setItem(`${keyPopup}`, pageViews);
+        
+        const ekeyPopup = document.querySelector(`.${keyPopup}`);
+        const elementViewXPage = ekeyPopup.querySelector('.afterViewXPage');
+        const popupHandler = new PopupHandler(elementViewXPage);
 
-        if (keyPopup) {
-            const elementViewXPage = keyPopup.querySelector('.afterViewXPage');
-            const popupHandler = new PopupHandler(elementViewXPage);
-
-            if (elementViewXPage && !elementViewXPage.classList.contains('variux-popup-active')) {
-                popupHandler.active();
-            }
-        } 
+        if (pageViews === config.numPage && !elementViewXPage.classList.contains('variux-popup-active')) {
+            popupHandler.active();
+        }
     }
 }
 

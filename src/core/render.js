@@ -1,8 +1,7 @@
 'use strict';
 
 class RenderPopup {
-    constructor(className, html, styleCss, idPopup, classList) {
-        this.className = className;
+    constructor(html, styleCss, idPopup, classList) {
         this.html = html;
         this.styleCss = styleCss;
         this.idPopup = idPopup;

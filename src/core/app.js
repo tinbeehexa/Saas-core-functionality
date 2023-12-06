@@ -3,7 +3,7 @@
 import Popup from "./Popup.js";
 import existClass from "../modules/conditions/options/existClass.js";
 
-export function readConfig(listConfig) {
+export function readConfig(listConfig) { 
     listConfig.forEach((element) => {
         if (existClass(element)) {
             if (element.enable == true) {
