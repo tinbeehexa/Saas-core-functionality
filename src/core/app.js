@@ -9,6 +9,7 @@ export function readConfig(listConfig) {
             if (element.enable == true) {
                 const el = document.createElement('div');
                 el.classList.add('variux-popup', element.functionName);
+                el.style.cssText += ';position: absolute;z-index: 1010 !important;';
                 document.body.appendChild(el);
     
                 let newPopup = new Popup(element, element.functionName, element.html, element.css);
