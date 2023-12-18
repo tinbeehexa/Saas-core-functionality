@@ -13,7 +13,7 @@ class RenderPopup {
         const popup = document.createElement("div");
         popup.innerHTML = this.html;
         popup.style.setProperty("display", `none`);
-        popup.style.setProperty('background-color', '#fff', "important");
+        popup.style.setProperty('background-color', '#fff', "important"); 
 
         for (let feature of this.classList) {
             popup.classList.add(feature);
