@@ -7,7 +7,7 @@ class PopupHandler {
 
     active() {
         this.element.classList.add("variux-popup-active");
-        this.element.style.cssText += ';display:block !important;';
+        //this.element.style.cssText += ';display:block !important;';
     }
 
     destroy() {

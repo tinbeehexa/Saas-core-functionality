@@ -1,0 +1,21 @@
+.variux-popup {
+    position: absolute;
+    z-index: 10010 !important;
+} 
+
+.variux-popup-active {
+    position: absolute;
+    z-index: 1010 !important;
+    display: block !important;
+}
+
+.variux-popup-overlay {
+    display:block !important;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+}
